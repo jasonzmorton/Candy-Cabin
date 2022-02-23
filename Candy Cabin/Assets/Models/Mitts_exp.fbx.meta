@@ -3,7 +3,17 @@ guid: 08c315ed77c35434d85eef330125409e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mitts_Texture
+    second: {fileID: 2100000, guid: fd9107f122264ca42bfd20dd7431b01a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oven_Mitt_Texture
+    second: {fileID: 2800000, guid: 4ec63527d23547f48b5c5207c132696a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
