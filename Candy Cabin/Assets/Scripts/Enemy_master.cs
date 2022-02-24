@@ -22,11 +22,11 @@ public class Enemy_master : MonoBehaviour
     {
         Distance = Vector3.Distance(Player.transform.position, this.transform.position);
         
-        if(Distance <= 15f)
+        if(Distance <= 10f)
         {
             isFree = true;
         }
-        if(Distance > 15f)
+        if(Distance > 10f)
         {
             isFree = false;
         }
