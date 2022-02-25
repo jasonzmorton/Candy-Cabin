@@ -9,6 +9,7 @@ public class Enemy_master : MonoBehaviour
     public float Distance;
 
     public bool isFree;
+    public GameObject box;
 
     public NavMeshAgent _agent;
     // Start is called before the first frame update
@@ -22,11 +23,11 @@ public class Enemy_master : MonoBehaviour
     {
         Distance = Vector3.Distance(Player.transform.position, this.transform.position);
         
-        if(Distance <= 10f)
+        if(box == null)
         {
             isFree = true;
         }
-        if(Distance > 10f)
+        if(box != null)
         {
             isFree = false;
         }
