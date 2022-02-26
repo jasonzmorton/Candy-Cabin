@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Enemy_master : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Enemy_master : MonoBehaviour
 
     public bool isFree;
     public GameObject box;
+    public GameManager gameManager;
 
     public NavMeshAgent _agent;
     // Start is called before the first frame update
@@ -43,5 +45,17 @@ public class Enemy_master : MonoBehaviour
         {
             _agent.isStopped = true;
         }
+
+        if(this.transform.position.x <= -52f)
+        {
+            gameManager.CompleteLevel();
+            Invoke("restartGame", 4);
+        }
+    }
+
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
