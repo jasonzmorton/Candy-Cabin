@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GretelController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GretelController : MonoBehaviour
 
     float movex;
     float movey;
+
 
     void Start()
     {
