@@ -13,6 +13,7 @@ public class DoorScript : MonoBehaviour {
     public AudioClip doorOpen;
 
     public GameObject wall;
+    public GameObject secondDoor;
     public GameObject Padlock;
 
     void Start()
@@ -55,6 +56,7 @@ public class DoorScript : MonoBehaviour {
                 {
                     close = true;
                     open = false;
+
                 }
             }
         }
@@ -88,6 +90,7 @@ public class DoorScript : MonoBehaviour {
                 else
                 {
                     GUI.Box(new Rect(0, 0, 200, 25), "Need a key!");
+                    secondDoor.transform.rotation = Quaternion.Euler(new Vector3(0,-90,0));
                 }
             }
         }

@@ -46,7 +46,7 @@ public class Enemy_master : MonoBehaviour
             _agent.isStopped = true;
         }
 
-        if(this.transform.position.x <= -38f)
+        if(this.transform.position.x <= -49.5f)
         {
             gameManager.CompleteLevel();
             Invoke("restartGame", 4);

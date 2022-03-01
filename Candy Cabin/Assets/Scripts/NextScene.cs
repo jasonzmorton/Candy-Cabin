@@ -10,7 +10,7 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Invoke("nextScene", 7);
+        Invoke("nextScene", 11);
         if (Input.GetKeyDown("space"))
         {
             SceneManager.LoadScene("Game");
