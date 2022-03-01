@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class GretelController : MonoBehaviour
 {
-    public Transform followObject;
+    private Transform followObject;
 
     public Transform gretel;
 
@@ -16,7 +16,7 @@ public class GretelController : MonoBehaviour
     Animator animator;
     Rigidbody2D rigidbody2d;
 
-    public Rigidbody followRigidbody;
+    private Rigidbody followRigidbody;
 
     float x;
     float y;
@@ -42,10 +42,17 @@ public class GretelController : MonoBehaviour
 
         gretelSprite.transform.position = new Vector3(x,2.47f,z);
 
-        movex = rigidbody2d.velocity.y;
-        movey = rigidbody2d.velocity.x;
 
-        animator.SetFloat("MoveX", movex);
-        animator.SetFloat("MoveY", movey);
+        if (follow.transform.position.x != 21.4f)
+        {
+            animator.SetFloat("MoveX", 0.5f);
+            animator.SetFloat("MoveY", 0.0f);
+        }
+
+        else
+        {
+            animator.SetFloat("MoveX", 0.0f);
+            animator.SetFloat("MoveY", 0.0f);
+        }
     }
 }

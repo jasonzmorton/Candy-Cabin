@@ -8,8 +8,17 @@ public class DoorScript : MonoBehaviour {
     public bool close;
     public bool inTrigger;
 
+    public GameObject soundobject;
+    private AudioSource door;
+    public AudioClip doorOpen;
+
     public GameObject wall;
     public GameObject Padlock;
+
+    void Start()
+    {
+        door = soundobject.GetComponent<AudioSource>();
+    }
  
     void OnTriggerEnter(Collider other)
     {
@@ -33,6 +42,8 @@ public class DoorScript : MonoBehaviour {
                     {
                         open = true;
                         close = false;
+                        door.clip = doorOpen;
+                        door.Play();
                         Destroy(wall);
                         Destroy(Padlock);
                     }

@@ -4,6 +4,19 @@ using System.Collections;
 public class DoorKey : MonoBehaviour {
  
     public bool inTrigger;
+
+    private AudioSource audioSource;
+    public AudioClip keyGrab;
+
+    public GameObject soundobject;
+
+    public GameObject keyInventory;
+
+    void Start()
+    {
+        audioSource = soundobject.GetComponent<AudioSource>();
+        keyInventory.SetActive(false);
+    }
  
     void OnTriggerEnter(Collider other)
     {
@@ -22,6 +35,9 @@ public class DoorKey : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DoorScript.doorKey = true;
+                keyInventory.SetActive(true);
+                audioSource.clip = keyGrab;
+                audioSource.Play();
                 Destroy(this.gameObject);
             }
         }

@@ -7,6 +7,15 @@ public class BreakablePole : MonoBehaviour
     public bool inTrigger;
 
     public GameObject wall;
+
+    public GameObject soundObject;
+    private AudioSource pole;
+    public AudioClip poleBreak;
+
+    void Start()
+    {
+        pole = soundObject.GetComponent<AudioSource>();
+    }
  
     void OnTriggerEnter(Collider other)
     {
@@ -24,6 +33,8 @@ public class BreakablePole : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                pole.clip = poleBreak;
+                pole.Play();
                 Destroy(this.gameObject);
                 Destroy(wall);
             }

@@ -4,6 +4,18 @@ using System.Collections;
 public class GloveScript : MonoBehaviour {
  
     public bool inTrigger;
+
+    public GameObject soundObject;
+    private AudioSource glove;
+    public AudioClip gloveGrab;
+
+    public GameObject gloveInventory;
+
+    void Start()
+    {
+        glove = soundObject.GetComponent<AudioSource>();
+        gloveInventory.SetActive(false);
+    }
  
     void OnTriggerEnter(Collider other)
     {
@@ -22,6 +34,9 @@ public class GloveScript : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ObstaclePush.hasGlove = true;
+                gloveInventory.SetActive(true);
+                glove.clip = gloveGrab;
+                glove.Play();
                 Destroy(this.gameObject);
             }
         }
