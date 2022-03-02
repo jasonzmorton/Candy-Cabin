@@ -11,6 +11,8 @@ public class GloveScript : MonoBehaviour {
 
     public GameObject gloveInventory;
 
+    public GameObject follow;
+
     void Start()
     {
         glove = soundObject.GetComponent<AudioSource>();
@@ -39,6 +41,11 @@ public class GloveScript : MonoBehaviour {
                 glove.Play();
                 Destroy(this.gameObject);
             }
+        }
+
+        if (follow.transform.position.x <= -49)
+        {
+            gloveInventory.SetActive(false);
         }
     }
  

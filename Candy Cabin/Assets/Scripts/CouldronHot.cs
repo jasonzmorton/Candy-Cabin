@@ -20,7 +20,7 @@ public class CouldronHot : MonoBehaviour
     {
         if(inTrigger && !ObstaclePush.hasGlove)
         {
-            GUI.Box(new Rect(0, 60, 310, 25), "The cauldron's too hot to move with my bare hands!");
+            GUI.Box(new Rect(0, 60, 400, 25), "Ouch! The cauldron is too hot to move with my bare hands!");
         }
 
     }
